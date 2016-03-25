@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="col-xs-12">
+<dl class="dl-horizontal">
+  {% set cur_date = "" %}
+  {% for article in dates_paginator.object_list %}
+  {% if article.date|strftime("%m/%d/%Y") != cur_date %}
+  {% set cur_date = article.date|strftime("%m/%d/%Y") %}
+  <dt>{{ cur_date }}</dt>
+  {% endif %}
+  <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><br />{{ article.date|strftime("%I:%M %p") }}<br /><br />{{ article.summary }}</dd>
+  {% endfor %}
+</dl>
+  </div>
+
+  <div class="col-xs-12">
+    <ul class="pager">
+      <li class="previous{% if not dates_page.has_previous() %} disabled{% endif %}"><a href="{{ SITEURL }}/{{ dates_previous_page.url }}"><span aria-hidden="true">&larr;</span> Older</a><li>
+      <li class="disabled">Page {{ dates_page.number }} / {{ dates_paginator.num_pages }}</li>
+	<li class="next{% if not dates_page.has_next() %} disabled{% endif %}"><a href="{{ SITEURL }}/{{ dates_next_page.url }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+  </div>
+{% endblock %}

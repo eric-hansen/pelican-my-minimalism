@@ -1,0 +1,40 @@
+* {
+    @@import url(https://fonts.googleapis.com/css?family=Hind);
+    color: #0e1116;
+    background-color: #f2f2f2 !important;
+}
+
+footer {
+    background-color: #7f7f7f !important;
+}
+
+a {
+    color: #660000;
+}
+
+a:hover {
+    color: #f27979 !important;
+    background: none !important;
+    text-decoration: none;
+}
+
+.container {
+    z-index: 9999;
+}
+
+.nav-tabs {
+    border-bottom: 0px !important;
+}
+
+.nav-tabs > li > a {
+    border: 0px !important;
+    border-radius: 0px !important;
+}
+
+.badge {
+    background-color: #222222 !important;
+}
+
+.list-group-item {
+    padding: 5px 10px !important;
+}

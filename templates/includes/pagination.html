@@ -1,0 +1,9 @@
+{% block pagination %}
+  <div class="col-xs-12">
+    <ul class="pager">
+      <li class="previous{% if not dates_page.has_previous() %} disabled{% endif %}"><a href="{{ SITEURL }}/{{ dates_previous_page.url }}"><span aria-hidden="true">&larr;</span> Older</a><li>
+      <li class="disabled">Page {{ dates_page.number }} / {{ dates_paginator.num_pages }}</li>
+	<li class="next{% if not dates_page.has_next() %} disabled{% endif %}"><a href="{{ SITEURL }}/{{ dates_next_page.url }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+  </div>
+{% endblock %}
